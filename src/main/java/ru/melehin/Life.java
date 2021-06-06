@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Life {
 
-    private static int NUMBER_OF_LINES;
-    private static int NUMBER_OF_COLUMNS;
+    private static int numberOfLines;
+    private static int numberOfColumns;
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -18,12 +18,12 @@ public class Life {
                             {0, 0, 0, 0, 0, 0, 0},
                             {0, 0, 0, 0, 0, 0, 0}};*/
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Input number of lines:");
-        NUMBER_OF_LINES= scanner.nextInt()+2;
-        System.out.println("Input number of columns:");
-        NUMBER_OF_COLUMNS= scanner.nextInt()+2;
+        System.out.println("Enter the number of lines:");
+        numberOfLines = scanner.nextInt()+2;
+        System.out.println("Enter the number of columns:");
+        numberOfColumns = scanner.nextInt()+2;
 
-        int[][] areaLife = new int [NUMBER_OF_LINES][NUMBER_OF_COLUMNS];
+        int[][] areaLife = new int [numberOfLines][numberOfColumns];
         Random random = new Random();
         for (int i = 1; i < areaLife.length - 1; i++) {
             for (int j = 1; j < areaLife[i].length - 1; j++) {
@@ -44,13 +44,13 @@ public class Life {
         }
         System.out.println();
 
-        int[][] cloneAreaLife = new int[NUMBER_OF_LINES][NUMBER_OF_COLUMNS];
+        int[][] cloneAreaLife = new int[numberOfLines][numberOfColumns];
 
         int generation = 0;
 
         while (true) {
 
-            int[][] temp = new int[NUMBER_OF_LINES][NUMBER_OF_COLUMNS];
+            int[][] temp = new int[numberOfLines][numberOfColumns];
 
             for (int i = 1; i < areaLife.length - 1; i++) {
                 for (int j = 1; j < areaLife[i].length - 1; j++) {
