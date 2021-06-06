@@ -1,5 +1,6 @@
 package ru.melehin;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,7 +9,7 @@ public class Life {
     private static int numberOfLines;
     private static int numberOfColumns;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
 /*        int[][] areaLife = {{0, 0, 0, 0, 0, 0, 0},
                             {0, 0, 0, 0, 0, 0, 0},
@@ -91,7 +92,7 @@ public class Life {
 
             Thread.sleep(500);
 
-            cloneAreaLife = areaLife.clone(); // System.arraycopy(areaLife, 0, temp2, 0, 7);
+            cloneAreaLife = areaLife.clone();
 
         }
     }
