@@ -46,8 +46,6 @@ public class Life {
 
         int[][] cloneAreaLife = new int[numberOfLines][numberOfColumns];
 
-        int generation = 0;
-
         while (true) {
 
             int[][] temp = new int[numberOfLines][numberOfColumns];
@@ -90,8 +88,6 @@ public class Life {
             }
 
             System.out.println();
-
-            generation++;
 
             Thread.sleep(500);
 
