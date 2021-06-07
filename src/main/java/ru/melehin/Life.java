@@ -1,6 +1,5 @@
 package ru.melehin;
 
-import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,7 +8,8 @@ public class Life {
     private static int numberOfLines;
     private static int numberOfColumns;
 
-    public static void main(String[] args) throws InterruptedException, IOException {
+    public static void main(String[] args) throws InterruptedException {
+
 
 /*        int[][] areaLife = {{0, 0, 0, 0, 0, 0, 0},
                             {0, 0, 0, 0, 0, 0, 0},
