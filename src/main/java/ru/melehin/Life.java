@@ -11,13 +11,13 @@ public class Life {
     public static void main(String[] args) throws InterruptedException {
 
 
-/*        int[][] areaLife = {{0, 0, 0, 0, 0, 0, 0},
-                            {0, 0, 0, 0, 0, 0, 0},
-                            {0, 0, 1, 1, 0, 0, 0},
-                            {0, 0, 0, 1, 0, 0, 0},
-                            {0, 0, 0, 1, 0, 0, 0},
-                            {0, 0, 0, 0, 0, 0, 0},
-                            {0, 0, 0, 0, 0, 0, 0}};*/
+//        int[][] areaLife = {{0, 0, 0, 0, 0, 0, 0},
+//                            {0, 0, 0, 0, 0, 0, 0},
+//                            {0, 0, 1, 1, 0, 0, 0},
+//                            {0, 0, 0, 1, 0, 0, 0},
+//                            {0, 0, 0, 1, 0, 0, 0},
+//                            {0, 0, 0, 0, 0, 0, 0},
+//                            {0, 0, 0, 0, 0, 0, 0}};
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of lines:");
         numberOfLines = scanner.nextInt()+2;
@@ -37,13 +37,7 @@ public class Life {
 
     public static void lifeCycle(int[][] areaLife) throws InterruptedException {
 
-        for (int i = 1; i < areaLife.length - 1; i++) {
-            for (int j = 1; j < areaLife[i].length - 1; j++) {
-                System.out.print(areaLife[i][j] + "  ");
-            }
-            System.out.println();
-        }
-        System.out.println();
+        printAreaLife(areaLife);
 
         int[][] cloneAreaLife = new int[numberOfLines][numberOfColumns];
 
@@ -54,16 +48,16 @@ public class Life {
             for (int i = 1; i < areaLife.length - 1; i++) {
                 for (int j = 1; j < areaLife[i].length - 1; j++) {
 
-                    int summ = areaLife[i][j - 1] + areaLife[i][j + 1] + areaLife[i - 1][j] + areaLife[i + 1][j]
-                    + areaLife[i - 1][j - 1] + areaLife[i - 1][j + 1] + areaLife[i + 1][j - 1] + areaLife[i + 1][j + 1];
+                    int sum = areaLife[i][j - 1] + areaLife[i][j + 1] + areaLife[i - 1][j] + areaLife[i + 1][j]
+                            + areaLife[i - 1][j - 1] + areaLife[i - 1][j + 1] + areaLife[i + 1][j - 1] + areaLife[i + 1][j + 1];
 
                     if (areaLife[i][j] == 0) {
-                        if (summ == 3) temp[i][j] = 1;
+                        if (sum == 3) temp[i][j] = 1;
                         else temp[i][j] = 0;
                     }
 
                     if (areaLife[i][j] == 1) {
-                        if ((summ < 2) | (summ > 3)) temp[i][j] = 0;
+                        if ((sum < 2) || (sum > 3)) temp[i][j] = 0;
                         else temp[i][j] = 1;
                     }
                 }
@@ -81,19 +75,21 @@ public class Life {
                 return;
             }
 
-            for (int i = 1; i < areaLife.length - 1; i++) {
-                for (int j = 1; j < areaLife[i].length - 1; j++) {
-                    System.out.print(areaLife[i][j] + "  ");
-                }
-                System.out.println();
-            }
-
-            System.out.println();
+            printAreaLife(areaLife);
 
             Thread.sleep(500);
 
-            cloneAreaLife = areaLife.clone();
-
+            cloneAreaLife = areaLife;
         }
+    }
+
+    public static void printAreaLife (int[][] areaLife){
+        for (int i = 1; i < areaLife.length - 1; i++) {
+            for (int j = 1; j < areaLife[i].length - 1; j++) {
+                System.out.print(areaLife[i][j] + "  ");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 }
